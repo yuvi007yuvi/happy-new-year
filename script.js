@@ -1,3 +1,19 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const backgroundMusic = document.getElementById("backgroundMusic");
+
+  // Check if the browser supports the Audio API and if the audio element exists
+  if (backgroundMusic && typeof backgroundMusic.play === 'function') {
+      // Add a click event listener to a button
+      document.getElementById("btn").addEventListener("click", function () {
+          // Play the background music
+          backgroundMusic.play().catch(function (error) {
+              // If there's an error, log it to the console
+              console.error("Error playing audio:", error);
+          });
+      });
+  }
+});
+
 const snowFall = () => {
     const bg = document.querySelector(".bg");
     for (let i = 0; i < 300; i++) {
